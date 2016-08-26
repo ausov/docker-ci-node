@@ -1,6 +1,6 @@
-# Docker image of Alpine linux with Node.js
+# Node Docker image for CI
 
 
 EXPERIMENTAL
 
-Based on Alpine linux. Includes Node.js and NPM for CI builder. 
+Based on official node with some npm packages pre-installed for faster CI builds. 
