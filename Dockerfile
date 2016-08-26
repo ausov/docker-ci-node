@@ -10,5 +10,3 @@ RUN npm install -g node-gyp && \
     npm install -g gulp-cli && \
     npm cache clean && \
     rm -rf /tmp/* /var/tmp/*
-
-WORKDIR /opt/ci
