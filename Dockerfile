@@ -1,12 +1,7 @@
-FROM node:6
+FROM ausov/docker-ci-node:latest
 
-ENV NPM_CONFIG_LOGLEVEL warn
-
-# Pre-install npm packages
-RUN npm install -g node-gyp && \
-    npm install -g node-sass && \
-    npm install -g phantomjs-prebuilt && \
-    npm install -g karma && \
-    npm install -g gulp-cli && \
-    npm cache clean && \
-    rm -rf /tmp/* /var/tmp/*
+# Install pip
+RUN apt-get update && apt-get install -qy python-pip && \
+    apt-get clean && apt-get autoclean && apt-get --purge -y autoremove && \
+    pip -q install awscli && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
